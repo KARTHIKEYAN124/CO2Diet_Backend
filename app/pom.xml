@@ -23,6 +23,10 @@
             <groupId>com.reduceco2now</groupId>
             <artifactId>catalog</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.reduceco2now</groupId>
+            <artifactId>ingestion</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.flywaydb</groupId>

@@ -28,6 +28,7 @@
     <modules>
         <module>shared</module>
         <module>catalog</module>
+        <module>ingestion</module>
         <module>app</module>
     </modules>
 
@@ -41,6 +42,11 @@
             <dependency>
                 <groupId>com.reduceco2now</groupId>
                 <artifactId>catalog</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.reduceco2now</groupId>
+                <artifactId>ingestion</artifactId>
                 <version>${project.version}</version>
             </dependency>
         </dependencies>

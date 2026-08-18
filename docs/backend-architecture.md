@@ -213,6 +213,8 @@ Primary open datasets: **Open Food Facts** and **USDA FoodData Central**, enrich
 
 Ingestion is a scheduled Spring Batch job: *weekly full reload + daily deltas* → normalise → upsert into Postgres → bump `row_version` (feeds Sync).
 
+**Source failure contract:** a source client may skip and report individual malformed products, but it must propagate a source-specific batch exception when the source request fails completely. The ingestion orchestrator catches that exception at the per-source boundary, records the source as failed, and may continue with the remaining sources. An empty batch is reserved for a successful request that returned no usable new products; it must not represent an unavailable upstream API.
+
 ---
 
 ## 8. Contributing back to Open Food Facts
